@@ -19,6 +19,15 @@ MongoClient.connect('mongodb://localhost:27017/video', function(err, db) {
     });
   });
 
+  app.get('/:name', function(req, res) {
+    var name = req.params.name;
+    var val1 = req.query.val1;
+    var val2 = req.query.val2;
+    console.log(val1);
+
+    res.render('index', {'name': name, 'val1': val1, 'val2': val2})
+  })
+
   app.use(function(req, res) {
     res.sendStatus(404);
   });
