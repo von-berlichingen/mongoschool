@@ -1,18 +1,15 @@
-<head>
-  <style>
-    body { font-family: 'Helvetica', 'Arial', sans-serif;}
-  </style>
-</head>
-<body>
-  <h1>Movies</h1>
-  <ul>
-    {% for movie in movies %}
-      <span>{{ movie.title }}</span>
-      <a href=""
-      {% else %}
-        <li> No movies found.</li>
-    {%endfor %}
-  </ul>
-
-  <div>hello {{name}} check this &nbsp;<span style="color:blue">{{val1}} </span> changing with &nbsp;<span style="color:red">{{val2}}.</div>
-</body>
+<!doctype HTML>
+<html>
+  <head><title>Fruit Picker</title></head>
+  <body>
+     <form action="/favorite_fruit" method="POST">
+        <p>What is your favorite fruit?</p>
+        {% for fruit in fruits %}
+          <p>
+            <input type="radio" name="fruit" value="{{fruit}}"/>{{fruit}}
+          </p>
+        {% endfor %}
+        <input type="submit" value="Submit"/>
+     </form>
+  </body>
+</html>
